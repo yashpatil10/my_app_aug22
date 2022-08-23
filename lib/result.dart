@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class Result extends StatelessWidget {
   final int resultScore;
-  final Function resetHandler;
+  final VoidCallback resetHandler;//(void function)getting error with this so -->// final Function resetHandler;
 
   Result(this.resultScore, this.resetHandler);
 
@@ -34,11 +34,21 @@ class Result extends StatelessWidget {
             child: Text(
               'Restart Quiz!',
             ),
+            
             textColor: Colors.blue,
             onPressed: resetHandler,
           ),
+          OutlineButton(
+            borderSide: BorderSide(color: Colors.blue),
+            textColor: Colors.blue,
+            child: Text('An Outline Button'),
+            onPressed: (){
+              print('Pressed outline button');
+            },
+          )
         ],
       ),
     );
   }
 }
+
